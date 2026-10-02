@@ -1,4 +1,4 @@
-#include "time.h"
+#include "Time.h"
 
 #include <stdlib.h>
 #include <iostream>
@@ -6,14 +6,9 @@
 using namespace std;
 
 Time::Time(){
-	hour=0;
-	min=0;
-}
-
-Time::Time(){
 	cout<<"constructeur par defaut"<<endl;
-	setHour(nullptr);
-	setMin(nullptr);
+	setHour(0);
+	setMin(0);
 }
 
 Time::Time(int h,int m){
@@ -24,8 +19,8 @@ Time::Time(int h,int m){
 
 Time::Time(const Time& t){
 	cout<<"constructeur de copie"<<endl;
-	setHour(t.Hour);
-	setMin(t.Min);
+	setHour(t.hour);
+	setMin(t.min);
 }
 
 Time::~Time(){
@@ -33,23 +28,21 @@ Time::~Time(){
 }
 
 void Time::setHour(int h){
-	if(hour!=nullptr)return;
 	if(h<0)return;
 	hour=h;
 }
 
 void Time::setMin(int m){
-	if(min!=nullptr)return;
 	if(m<0)return;
 	min=m;
 }
 
 int Time::getHour()const {
-  return Hour;
+  return hour;
 }
 
 int Time::getMin()const {
-	return Min
+	return min;
 }
 
 void Time::desplay(int h,int m){

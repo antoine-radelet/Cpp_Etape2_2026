@@ -2,7 +2,7 @@ class Time{
 
 	private:
 
-		int hous;
+		int hour;
 
 		int min;
 
@@ -12,7 +12,7 @@ class Time{
 
 		Time(int h,int m);//constructeur d'initialisation
 
-		Time(const Event& t);//constructeur de copie
+		Time(const Time& t);//constructeur de copie
 
 		~Time();//destructeur
 
@@ -24,5 +24,5 @@ class Time{
 
 		int getMin()const;
 
-		void desplay(int h,int m)
+		void desplay(int h,int m);
 };
