@@ -10,7 +10,9 @@ class Time{
 
 		Time();//constructeur par defaut
 
-		Time(int h,int m);//constructeur d'initialisation
+		Time(int h,int m);//constructeur d'initialisation d'heure
+
+		Time(int d);//constructeur d'initialisation de durée
 
 		Time(const Time& t);//constructeur de copie
 
@@ -18,11 +20,11 @@ class Time{
 
 		void setHour(int h);
 
-		void setMin(int m);
+		void setMinute(int m);
 
 		int getHour()const;
 
-		int getMin()const;
+		int getMinute()const;
 
-		void desplay(int h,int m);
+		void display()const;
 };
