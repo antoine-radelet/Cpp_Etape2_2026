@@ -36,12 +36,12 @@ Time::~Time(){
 }
 
 void Time::setHour(int h){
-	if(h<0)return;
+	if(h<0 or h > 23)return;
 	hour=h;
 }
 
 void Time::setMinute(int m){
-	if(m<0)return;
+	if(m<0 or m > 60)return;
 	min=m;
 }
 
