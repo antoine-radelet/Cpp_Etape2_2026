@@ -1,15 +1,14 @@
 #include <stdlib.h>
 #include <iostream>
 using namespace std;
-#include "Time.h"
-//#include "Timing.h"
+#include "Timing.h"
 #include "Event.h"
 
 //using namespace planning;
 
 int  Menu();
 void Essai1();
-//void Essai2();
+void Essai2();
 //void Essai3();
 //void Essai4();
 
@@ -25,7 +24,7 @@ int main(int argc,char* argv[])
     switch(choix)
     {
       case 1 : Essai1(); break;
-      //case 2 : Essai2(); break;
+      case 2 : Essai2(); break;
       //case 3 : Essai3(); break;
       //case 4 : Essai4(); break;
       default : fini = true ; break;
@@ -43,7 +42,7 @@ int Menu()
   cout << "--- JEU DE TESTS 2 -------------------------------------------------------------------" << endl;
   cout << "--------------------------------------------------------------------------------------" << endl;
   cout << " 1. Tests de la classe Time" << endl;
-  //cout << " 2. Tests de la classe Timing (Agregation par valeur avec un objet Time)" << endl;
+  cout << " 2. Tests de la classe Timing (Agregation par valeur avec un objet Time)" << endl;
   //cout << " 3. Tests de la classe Event (Agregation par reference avec un objet Timing)" << endl;
   //cout << " 4. Tests des variables statiques utiles" << endl;
   cout << " 5. Quitter" << endl << endl;

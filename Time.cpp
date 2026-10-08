@@ -6,19 +6,19 @@
 using namespace std;
 
 Time::Time(){
-	cout<<"constructeur par defaut"<<endl;
+	//cout<<"Time constructeur par defaut"<<endl;
 	setHour(0);
 	setMinute(0);
 }
 
 Time::Time(int h,int m){
-	cout<<"constructeur d'initialisation d'heure"<<endl;
+	//cout<<"Time constructeur d'initialisation d'heure"<<endl;
 	setHour(h);
 	setMinute(m);
 }
 
 Time::Time(int d){
-	cout<<"constructeur d'initialisation de durée"<<endl;
+	//cout<<"Time constructeur d'initialisation de durée"<<endl;
 	int h=d/60;
 	int m=d%60;
 	setHour(h);
@@ -26,13 +26,13 @@ Time::Time(int d){
 }
 
 Time::Time(const Time& t){
-	cout<<"constructeur de copie"<<endl;
+	//cout<<"Time constructeur de copie"<<endl;
 	setHour(t.hour);
 	setMinute(t.min);
 }
 
 Time::~Time(){
-	cout<<">>> destructeur <<<"<<endl;
+	//cout<<">>> Time destructeur <<<"<<endl;
 }
 
 void Time::setHour(int h){
@@ -54,5 +54,8 @@ int Time::getMinute()const {
 }
 
 void Time::display()const{
-	cout<<"l'heure : "<<hour<<":"<<min<<endl;
+	if(min<10) 
+		cout<<hour<<"h0"<<min<<endl;
+	else
+		cout<<hour<<"h"<<min<<" ";
 }

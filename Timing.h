@@ -1,4 +1,6 @@
-#include"time.h"
+#include "Time.h"
+#include <string>
+using namespace std;
 
 class Timing{
 
@@ -14,7 +16,7 @@ class Timing{
 
 		Timing();
 
-		Timing(string d, Time start, Time duration);;
+		Timing(string d, Time start, Time duration);
 
 		Timing(const Timing& t);
 
@@ -22,9 +24,9 @@ class Timing{
 
 		void setDay(string d);
 
-		void setStart(const Time& t);
+		void setStart(Time t);
 
-		void setDuration(const Time& t);
+		void setDuration(Time t);
 
 		string getDay() const;
 		

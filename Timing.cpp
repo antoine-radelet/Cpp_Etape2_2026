@@ -1,43 +1,46 @@
-#include "Timimg.h"
-#include "Time.h"
+#include "Timing.h"
+
 
 #include <stdlib.h>
 #include <iostream>
 #include <cstring>
+#include <string>
 using namespace std;
 
 Timing::Timing(){
-	setDay("default");
+	//cout<<"Timing constructeur par defaut"<<endl;
+	setDay("pas de jour");
 	setStart(Time ());
 	setDuration(Time ());
 }
 
-Timing::Timing(string d, Time h, Time dur)
-{
-setDay(d);
-setStart(h);
-setDuration(dur);
+Timing::Timing(string d, Time h, Time dur){
+	//cout<<"Timing constructeur d'initialisation de Timing"<<endl;
+	setDay(d);
+	setStart(h);
+	setDuration(dur);
 }
 
 Timing::Timing(const Timing& t){
+	//cout<<"Timing constructeur de copie"<<endl;
 	setDay(t.day);
 	setStart(t.start);
 	setDuration(t.duration);
 }
 
 Timing::~Timing(){
-	cout<<">>> destructeur <<<"<<endl;
+	//cout<<">>> Timing destructeur <<<"<<endl;
 }
 
 void Timing::setDay(string d){
 	day = d;
 }
 
-void Timing::setStart(const Time& t){
+void Timing::setStart(Time t){
 	start = t;
 }
 
-void Timing::setDuration(const Time& t){
+void Timing::setDuration(Time t){
 	duration = t;
 }
 
@@ -55,8 +58,8 @@ Time Timing::getStart()const {
 
 void Timing::display() const
 {
-    cout << "Evenement le " << day << " a ";
+    cout << "Evenement le " << day << " à ";
     start.display();
-    cout << "Pendant ";
+    cout << "pendant ";
     duration.display();
 }

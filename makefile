@@ -7,5 +7,5 @@ Event.o:	Event.cpp Event.h
 Time.o:	Time.cpp Time.h
 	g++	Time.cpp -c
 
-Timing.o:	Timing.cpp
-	g++ Timing.cpp Timing.h
+Timing.o:	Timing.cpp Timing.h Time.h
+	g++ Timing.cpp -c
