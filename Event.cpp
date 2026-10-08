@@ -23,18 +23,21 @@ Event::Event():title(nullptr){
   cout<<"constructeur par defaut"<<endl;
   setCode(1);
   setTitle("default");
+  timing=nullptr;
 }
 
-Event::Event(int c,const char* t):title(nullptr){
+Event::Event(int c,const char* t,Timing p):title(nullptr){
   cout<<"constructeur d'initialisation"<<endl;
   setCode(c);
   setTitle(t);
+  setTiming(p);
 }
 
 Event::Event(const Event& e):title(nullptr){
   cout<<"constructeur de copie"<<endl;
   setTitle(e.getTitle());
   setCode(e.getCode());
+  setTiming(e.getTiming());
 }
 
 Event::~Event(){
@@ -54,12 +57,20 @@ void Event::setCode(int c){
   code=c;
 }
 
+void Event::setTiming(Timing t){
+  timing=t;
+}
+
 const char* Event::getTitle()const {
   return title;
 }
 
 int Event::getCode()const {
   return code;
+}
+
+Timing Event::getTiming()const{
+  return timing;
 }
 
 void Event::display() const{
