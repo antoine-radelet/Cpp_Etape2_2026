@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <cstring>
+#include <string>
 using namespace std;
 
 
@@ -19,21 +20,28 @@ using namespace std;
 //   le tout grace a la commande make 
 
 
-Event::Event():title(nullptr){
+Event::Event(){
   cout<<"constructeur par defaut"<<endl;
   setCode(1);
   setTitle("default");
   timing=nullptr;
 }
 
-Event::Event(int c,const char* t,Timing p):title(nullptr){
+Event::Event(int c, const string t){
+  cout << "constructeur d'initialisation (sans timing)" << endl;
+  setCode(c);
+  setTitle(t);
+  timing=nullptr;
+}
+
+Event::Event(int c,const string t,const Timing& p){
   cout<<"constructeur d'initialisation"<<endl;
   setCode(c);
   setTitle(t);
   setTiming(p);
 }
 
-Event::Event(const Event& e):title(nullptr){
+Event::Event(const Event& e){
   cout<<"constructeur de copie"<<endl;
   setTitle(e.getTitle());
   setCode(e.getCode());
@@ -41,15 +49,11 @@ Event::Event(const Event& e):title(nullptr){
 }
 
 Event::~Event(){
-  if (title !=nullptr)delete title;
   cout<<">>> destructeur <<<"<<endl;
 }
     
-void Event::setTitle(const char* t){
-  if(strlen(t)==0)return;
-  if (title != nullptr) delete title;
-  title=new char[strlen(t) + 1];
-  strcpy(title,t);
+void Event::setTitle(const string t){
+  title=t;
 }
 
 void Event::setCode(int c){
@@ -57,11 +61,15 @@ void Event::setCode(int c){
   code=c;
 }
 
-void Event::setTiming(Timing t){
-  timing=t;
+void Event::setTiming(const Timing& t)
+{
+  if (&t == timing) return;    // auto-affectation
+  Timing* nouveau = new Timing(t);
+  delete timing;
+  timing = nouveau;
 }
 
-const char* Event::getTitle()const {
+const string Event::getTitle()const {
   return title;
 }
 
@@ -69,11 +77,16 @@ int Event::getCode()const {
   return code;
 }
 
-Timing Event::getTiming()const{
-  return timing;
+const Timing& Event::getTiming() const{
+  return *timing;
 }
 
 void Event::display() const{
   cout<<"le code : "<<code<<endl;
   cout<<"le titre : "<<title<<endl;
+  if (timing != nullptr)
+    timing->display();
+  else
+    cout << "pas de timing associe" << endl;
 }
+

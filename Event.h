@@ -6,30 +6,32 @@ class Event
   private:
 
     int code;
-    char* title;
-    Timing* timing=nullptr;
+    string title;
+    Timing* timing;
 
   public:
 
     Event();
 
-    Event(int c,const char* t,Timing p);
+    Event(int c,const string t );
+
+    Event(int c,const string t,const Timing& p);
 
     Event(const Event& e);
 
     ~Event();
     
-    void setTitle(const char* t);
+    void setTitle(const string t);
 
     void setCode(int c);
 
-    void setTiming(Timing p);
+    void setTiming(const Timing& p);
 
-    const char* getTitle() const;
+    const string getTitle() const;
 
     int getCode() const;
 
-    Timing getTiming()const;
+    const Timing& getTiming()const;
 
     void display() const;
 };
