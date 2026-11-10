@@ -18,7 +18,9 @@ using namespace std;
 // * Une fois que tout le programme compile et fonctionne correctement, creez le .h contenant la declaration
 //   de la classe, le .cpp contenant la definition des methodes, et ensuite le makefile permettant de compiler
 //   le tout grace a la commande make 
+namespace planning{
 
+int Event::currentCode = 1 ;
 
 Event::Event(){
   cout<<"constructeur par defaut"<<endl;
@@ -90,3 +92,4 @@ void Event::display() const{
     cout << "pas de timing associe" << endl;
 }
 
+}//end namespace

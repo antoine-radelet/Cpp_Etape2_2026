@@ -1,6 +1,6 @@
 #include "Timing.h"
 
-
+namespace planning{
 class Event
 {
   private:
@@ -10,6 +10,8 @@ class Event
     Timing* timing;
 
   public:
+
+    static int currentCode; 
 
     Event();
 
@@ -35,3 +37,5 @@ class Event
 
     void display() const;
 };
+
+}//end namespace 

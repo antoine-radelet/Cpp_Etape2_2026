@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+namespace planning{
+
 class Timing{
 
 	private:
@@ -13,6 +15,14 @@ class Timing{
 		Time duration;
 
 	public:
+
+		static const std::string MONDAY;
+		static const std::string TUESDAY;
+		static const std::string WEDNESDAY;
+		static const std::string THURSDAY;
+		static const std::string FRIDAY;
+		static const std::string SATURDAY;
+		static const std::string SUNDAY;
 
 		Timing();
 
@@ -36,3 +46,5 @@ class Timing{
 
 		void display()const;
 };
+
+}//end namespace 

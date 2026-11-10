@@ -7,6 +7,16 @@
 #include <string>
 using namespace std;
 
+namespace planning{
+
+const string Timing::MONDAY    = "Lundi";
+const string Timing::TUESDAY   = "Mardi";
+const string Timing::WEDNESDAY = "Mercredi";
+const string Timing::THURSDAY  = "Jeudi";
+const string Timing::FRIDAY    = "Vendredi";
+const string Timing::SATURDAY  = "Samedi";
+const string Timing::SUNDAY    = "Dimanche";
+
 Timing::Timing(){
 	//cout<<"Timing constructeur par defaut"<<endl;
 	setDay("pas de jour");
@@ -63,3 +73,5 @@ void Timing::display() const
     cout << "pendant ";
     duration.display();
 }
+
+}//end namespace 

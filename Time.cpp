@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-
+namespace planning{
 Time::Time(){
 	//cout<<"Time constructeur par defaut"<<endl;
 	setHour(0);
@@ -59,3 +59,5 @@ void Time::display()const{
 	else
 		cout<<hour<<"h"<<min<<" ";
 }
+
+}//end namespace 

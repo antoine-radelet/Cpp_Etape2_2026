@@ -1,3 +1,5 @@
+namespace planning{
+
 class Time{
 
 	private:
@@ -28,3 +30,5 @@ class Time{
 
 		void display()const;
 };
+
+}//end namespace 
